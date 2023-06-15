@@ -31,21 +31,41 @@ export default function SignUpPage() {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    if (name === 'username') setUsername(value);
+    if (name === 'firstname') setUsername(value);
     if (name === 'password') setPassword(value);
   };
 
   return <>
     <h1>Sign Up</h1>
     <form onSubmit={handleSubmit} onChange={handleChange}>
-      <label htmlFor="username">Username</label>
+      <label htmlFor="firstname">First Name</label>
       <input
         autoComplete="off"
         type="text"
-        id="username"
-        name="username"
+        id="first-Name"
+        name="FirstName"
         onChange={handleChange}
         value={username}
+      />
+
+      <label htmlFor="lastname">Last Name</label>
+      <input
+        autoComplete="off"
+        type="lastname"
+        id="last-Name"
+        name="lastname"
+        onChange={handleChange}
+        value={password}
+      />
+
+      <label htmlFor="Email">Email</label>
+      <input
+        autoComplete="off"
+        type="Email"
+        id="Email"
+        name="Email"
+        onChange={handleChange}
+        value={password}
       />
 
       <label htmlFor="password">Password</label>
