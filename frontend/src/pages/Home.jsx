@@ -37,7 +37,7 @@ function Home() {
       </div>
 
       <button onClick={handleCreatePost}>Create Post</button>
-
+    <Post />
       {isCreatingPost && (
         <form onSubmit={handleSubmit}>
           <label>
