@@ -22,11 +22,11 @@ class Post {
         }
       }
 
-    static async delete (post_id)  {
+    static async delete(post_id)  {
         try {
-          const query = `DELETE FROM posts WHERE post_id = ? RETURNING *`;
+          const query = `DELETE FROM post WHERE post_id = ? RETURNING *`;
           const { rows: [post] } = await knex.raw(query, [post_id]);
-        //   console.log(post)
+        //   console.log(rows)
           return post;
         } catch (err) {
           console.error(err);
@@ -57,6 +57,9 @@ class Post {
         }
 
         }
+
+        
+    
 
 
 

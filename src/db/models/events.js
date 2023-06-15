@@ -39,12 +39,25 @@ class Events {
         try {
           const query = 'SELECT * FROM events WHERE user_id = ?';
           const { rows } = await knex.raw(query, [user_id]);
+          
           return rows.map((post) => new Events(post));
         } catch (err) {
           console.error(err);
           return null;
         }
     }
+
+    static async listAll() {
+        try {
+          const query = 'SELECT * FROM events';
+          const { rows } = await knex.raw(query);
+          return rows
+        } catch (err) {
+          console.error(err);
+          return null;
+        }
+
+        }
 
 
 
