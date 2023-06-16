@@ -24,9 +24,18 @@ function Home() {
     setContent('');
     setIsCreatingPost(false);
   };
-  
 
   const handleCreatePost = () => {
+    fetch('http://127.0.0.1:3000/api/post')
+      .then(response => response.json())
+      .then(posts => {
+        // Handle the retrieved posts here
+        console.log(posts);
+      })
+      .catch(error => {
+        // Handle any errors that occurred during the request
+        console.error('Error:', error);
+      });
     setIsCreatingPost(true);
   };
 
@@ -37,14 +46,14 @@ function Home() {
       </div>
 
       <button onClick={handleCreatePost}>Create Post</button>
-    <Post />
+
       {isCreatingPost && (
         <form onSubmit={handleSubmit}>
           <label>
             Header:
             <textarea
-              value={cont``}
-              onChange={(e) => setContent(e.target.value)}
+              value={header}
+              onChange={(e) => setHeader(e.target.value)}
             />
           </label>
           <br />
