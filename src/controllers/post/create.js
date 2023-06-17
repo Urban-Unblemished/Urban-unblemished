@@ -2,12 +2,15 @@ const createPost = async (req, res) => {
     const {
         session,
         db: { Post },
-        body: { user_id, img_url, description, header, location}
+        body: {img_url, description, header, location}
     } = req
-    // const user_id = session.user_id;
+    const user_id = session.userId;
     // console.log(user_id, img_url, description, header)
+    // user_id, img_url, description, header, location
+    console.log(session, req.body)
     const user = await Post.create(user_id, img_url, description, header, location);
-    res.send(user);
+    // console.log(user);
+    res.send(user); 
 }
 
 module.exports = createPost;    

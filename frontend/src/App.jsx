@@ -27,6 +27,7 @@ export default function App() {
         <Route path='/users/:id' element={<UserPage />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
+      
     </main>
   </>;
 }
