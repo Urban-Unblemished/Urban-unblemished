@@ -71,7 +71,25 @@ function BasicModal() {
       >
         <Box sx={style}>
         <div>
-          <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
+ 
+  <label>Enter the description:
+    <input type="text" name="description" />
+  </label>
+  <label>Enter the header:
+    <input type="text" name="header" />
+  </label>
+  <label>Enter the location:
+    <input type="text" name="location" />
+  </label>
+  <label>Upload File:
+    <input type="file" name="file" />
+  </label>
+  <input className="submit" type="submit" value="Send" />
+</form>
+
+          
+          {/* <form onSubmit={handleSubmit}>
             <label>Enter your name:
               <input type="text" />
             </label>
@@ -81,8 +99,8 @@ function BasicModal() {
             <label>Upload File:
               <input type="file" name="file" />
             </label>
-            <input class="submit" type="submit" value="Send" />
-          </form>
+            <input className="submit" type="submit" value="Send" />
+          </form> */}
         </div>
           {/* <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             Duis mollis, est non commodo luctus, nisi erat porttitor

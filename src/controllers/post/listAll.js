@@ -8,7 +8,7 @@ const listAll = async (req, res) => {
     
     const posts = await Post.listAll(); 
     res.send(posts);
-    console.log(posts)
+    // console.log(posts)
     // posts ? res.send(posts) : null;
     
 }
