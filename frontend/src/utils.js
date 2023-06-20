@@ -29,7 +29,7 @@ export const fetchHandler = async (url, options = basicFetchOptions) => {
     if (res.status === 204) return [true, null];
 
     const data = await res.json();
-    return [data, null];
+
   } catch (error) {
     return [null, error];
   }
