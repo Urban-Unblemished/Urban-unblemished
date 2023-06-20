@@ -5,7 +5,6 @@ const volunteer = async (req, res) => {
         body: { event_id }
     } = req
     const user_id = session.userId;
-    // console.log(user_id, event_id)
     const user = await Volunteer.volunteer(user_id, event_id);
     res.send(user);
 }

@@ -15,7 +15,6 @@ class Post {
         try {
           const query = `INSERT INTO post (user_id, img_url, description, header, location)
             VALUES (?, ?, ?, ?, ?) RETURNING *`;
-          console.log(user_id, img_url, description, header, location);
           const { rows: [post] } = await knex.raw(query, [user_id, img_url, description,header, location]);
           return post ? new Post(post) : null;
         } catch (err) {
@@ -28,7 +27,6 @@ class Post {
         try {
           const query = `DELETE FROM post WHERE post_id = ? RETURNING *`;
           const { rows: [post] } = await knex.raw(query, [post_id]);
-        //   console.log(rows)
           return post;
         } catch (err) {
           console.error(err);

@@ -4,12 +4,8 @@ const listAll = async (req, res) => {
         db: { Post },
         body: {}
     } = req
-    const user_id = session.userId;
-    
     const posts = await Post.listAll(); 
     res.send(posts);
-    // console.log(posts)
-    // posts ? res.send(posts) : null;
     
 }
 
