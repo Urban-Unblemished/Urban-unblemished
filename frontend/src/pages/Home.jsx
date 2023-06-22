@@ -35,7 +35,7 @@ const HomePage = () => {
 }
 
 export default HomePage;
-/ import React from "react";
+//  import React from "react";
 // import { Card, CardHeader, CardBody, CardTitle, CardText, Button } from "reactstrap";
 // const EventCard = ({ heading, img,  description, date, time, location }) => {
 //   return (
