@@ -1,6 +1,7 @@
 import { useContext, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/Home';
+// import EventPage from './pages/Events-Feed';
 import SignUpPage from './pages/SignUp';
 import LoginPage from './pages/Login';
 import SiteHeadingAndNav from './components/SiteHeadingAndNav';
@@ -9,7 +10,7 @@ import UserContext from './contexts/current-user-context';
 import { checkForLoggedInUser } from './adapters/auth-adapter';
 import UsersPage from './pages/Users';
 import UserPage from './pages/User';
-import image from '../assets/BACKGROUND_IMG.png'
+import image from '../assets/BACKGROUND_IMG.png';
 
 export default function App() {
   const { setCurrentUser } = useContext(UserContext);
@@ -28,8 +29,8 @@ export default function App() {
         <Route path='/users' element={<UsersPage />} />
         <Route path='/users/:id' element={<UserPage />} />
         <Route path='*' element={<NotFoundPage />} />
+        {/* <Route path='/events' element={<EventPage />} /> */}
       </Routes>
-      <HomePage />
       </div>
     </main>
   </>;

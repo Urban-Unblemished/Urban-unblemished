@@ -79,10 +79,6 @@ form {
   justify-content: center;
 }
 
-#about-area{
-  font-family: 'Montserrat', sans-serif;
-
-}
 
 #issue, #impacts, #solution{
   display:block;
@@ -92,29 +88,35 @@ form {
   max-width: 775px; 
   height:auto;
 }
- 
-#card {
-  /* background-color: green; */
-  border-radius: 2%;
-  border: 2px solid black;
 
+#card {
+  background-color: hsl(120, 100%, 25%, .3);
+  border-radius: 2%;
+  border: 3px solid black;
+  box-shadow: 10px 10px;
+}
+
+#about-area{
+  font-family: 'Montserrat', sans-serif;
 }
 
 #about-area-div {
     display: flex;
     margin-top: 10rem;
     justify-content: center;
-
 }
 
 #about-img{
-  height:400px;
-  width:400px;
+  height:550px;
+  width:550px;
 }
 
 #about-text-div{
-  width:565px;
+  width:700px;
+}
 
+#about-text{
+  font-size: 1.6em;
 }
 
 #be {
@@ -125,5 +127,26 @@ form {
 #about-header{
   margin-top:5rem;
   font-weight:700;
-  font-size: 3rem;
+  font-size: 5rem;
+}
+
+#graphics-header{
+  width:900px;
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+}
+
+#graphics-div{
+  display: flex;
+  justify-content: space-around;
+}
+#wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+#how-to-header{
+  font-family:'Montserrat', sans-serif ;
+  text-align:center ;
 }
