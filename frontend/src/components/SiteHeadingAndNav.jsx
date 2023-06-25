@@ -25,6 +25,9 @@ Users
 <li>
 <NavLink to="/events">Events</NavLink> {/* Add the Events NavLink */}
 </li>
+<li>
+<NavLink to="/feed">Feed</NavLink> {/* Add the Feed NavLink */}
+</li>
 {currentUser ? (
 <li>
 <NavLink to={`/users/${currentUser.id}`}>

@@ -29,10 +29,8 @@ function handleSubmit(e){
 
 
 
-
-
-
 function BasicModal() {
+  
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -120,6 +118,7 @@ function BasicModal() {
 
 export default function HomePage() {
   return <>
+  
     <h1>HomeNJJJJ</h1>
     <p>Put something interesting here!</p>
   </>;

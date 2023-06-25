@@ -5,10 +5,10 @@
 exports.up = (knex) => knex.schema.createTable ('events', (table) => {
     table.increments('event_id').primary();
     table.integer('user_id').references('id').inTable('users')
-    table.string('img_url')
+    table.text('img_url')
     table.string('date')
     table.string('time')
-    table.string('header')
+    table.text('header')
     table.text('description')
     table.string('location')
     table.timestamps(true, true);
