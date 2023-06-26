@@ -1,25 +1,43 @@
-import { Card, CardHeader, CardBody, CardTitle, CardText, Button } from "reactstrap";
+import * as React from 'react';
+import {Card,Button, CardBody, CardFooter,CardImg, CardImgOverlay, CardTitle, Col, Row, Container } from 'reactstrap';
+import '../events.css'
 
 
-const EventCard = ({ heading, img,  description, date, time, location }) => {
-    return (
-      <Card variant="outlined">
-        <CardHeader>
-          <CardTitle>Brownsville's Dirt Level is High</CardTitle>
-        </CardHeader>
-        <CardBody>
-          <CardText> As I walk through Brownsville, Brooklyn on a weekly basis, I watch the same set of trash be blown in the wind. Lets team up to make our neighborhood green again! </CardText>
-          <p>
-            <b>Date:</b> {date}
-            <br />
-            <b>Time:</b> {time}
-            <br />
-            <b>Location:</b> {location}
-          </p>
-        </CardBody>
-        <Button color="primary">Join This Clean Up</Button>
-      </Card>
-    );
-  };
+export default function EventCard(){
+  return <>
+  <Container id='container'fluid>
 
-export default EventCard; 
+    <Card id='card'>
+      <Row id='row' xs>
+        <Col id='col'>
+          <CardImg id='card-img'
+          src='https://cdn.pixabay.com/photo/2013/07/18/20/25/old-164980_1280.jpg'
+          />
+          <CardImgOverlay>
+            <CardTitle id='card-title'
+            
+            style={{
+              borderStyle:'solid',
+              color:'white',
+              borderColor:'black',
+              borderRadius:'5px',
+              width:'fit-content',
+              backgroundColor:'black',
+            }}>Fri Jun 30</CardTitle>
+          </CardImgOverlay>
+        </Col>
+        <Col id="right-col" style={{
+          backgroundColor: '#6A7152'
+        }}>
+          <CardBody>
+            <CardTitle id='title'>Lets Link</CardTitle>
+            <CardTitle id='title'>Canarsie, Brooklyn</CardTitle>
+            <Button color='info' size='lg' outline>Join</Button>
+          </CardBody>
+        </Col>
+      </Row>
+        <CardFooter id='footer'>16+ People are Going!</CardFooter>
+    </Card>
+  </Container>
+  </>
+}

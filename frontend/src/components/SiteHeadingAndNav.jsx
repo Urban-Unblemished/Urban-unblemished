@@ -1,19 +1,23 @@
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState} from "react";
 import CurrentUserContext from "../contexts/current-user-context";
+import { Button } from "reactstrap";
 
 export default function SiteHeadingAndNav() {
   const { currentUser } = useContext(CurrentUserContext);
+  const [color, changeColor] = useState('#69FFF1');
 
-  return <header>
+  return <header style={{fontSize:'20px'}}>
     <a id='logo' href='/'>
       <img src='../../assets/urban-unblemished-logo.png' alt='Logo' />
     </a>
     <nav>
       <ul>
         {/* <li><NavLink to='/'>Home</NavLink></li> */}
-        {/* <li><NavLink to='/events'>Events</NavLink></li> */}
+        <li><Button>+</Button></li>
+        <li><NavLink to='/events'>Events</NavLink></li>
         <li><NavLink to='/users' end={true}>Users</NavLink></li>
+
         {
           currentUser
             ? <li><NavLink to={`/users/${currentUser.id}`}>{currentUser.username}</NavLink></li>

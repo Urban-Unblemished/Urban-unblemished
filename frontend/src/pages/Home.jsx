@@ -1,11 +1,15 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, CardBody, CardText } from "reactstrap";
+import image from '../../assets/BACKGROUND_IMG.png';
+import '../index.css'
+
+
 
 
 export default function HomePage() {
   return <>
-          <div id='main-text-box'>
+          <div id='main-text-box' style={{backgroundImage: `url(${image})`}}>
             <div id='about-area-div'>
               <div id='about-text-div'>
                 <h1 id='about-header'>Be<br />
@@ -80,17 +84,17 @@ export default function HomePage() {
         </div>
         <div id="graphics-div">
           <div>
-            <img src="../../assets/JOIN_NOW_ICON.png"/>
+            <img id="graphic" src="../../assets/JOIN_NOW_ICON.png"/>
             <h1 id='how-to-header'>Join Now</h1>
             <p>Create an account today and begin making history.</p>
           </div>
           <div>
-          <img src="../../assets/HOW_TO_DISCUSS_ICON.png"/>
+          <img id="graphic" src="../../assets/HOW_TO_DISCUSS_ICON.png"/>
             <h1 id='how-to-header'>Discuss</h1>
             <p>Chat online with other members about the next plans of action.</p>
           </div>
           <div>
-          <img src="../../assets/MAKE_EVENTS_ICON.png"/>
+          <img id="graphic" src="../../assets/MAKE_EVENTS_ICON.png"/>
             <h1 id='how-to-header'>Make Events</h1>
             <p>Band together, form events and clean organized.<br /> Form clean up groups and promote and discuss events.</p>
           </div>

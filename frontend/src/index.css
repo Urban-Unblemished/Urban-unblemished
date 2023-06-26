@@ -89,13 +89,6 @@ form {
   height:auto;
 }
 
-#card {
-  background-color: hsl(120, 100%, 25%, .3);
-  border-radius: 2%;
-  border: 3px solid black;
-  box-shadow: 10px 10px;
-}
-
 #about-area{
   font-family: 'Montserrat', sans-serif;
 }
@@ -149,4 +142,28 @@ form {
 #how-to-header{
   font-family:'Montserrat', sans-serif ;
   text-align:center ;
+}
+#graphic{
+  width:500px;
+  height:500px;
+}
+
+#events-header{
+  font-size: 5rem;
+  text-align: center;
+}
+
+#events-form-header{
+  text-align: center;
+}
+
+Form {
+  width: 500px;
+  background-color: #63D471;
+  border-radius: 8%;
+}
+
+Label{
+  font-family: 'Frank Ruhl Libre', serif;
+font-family: 'Montserrat', sans-serif;
 }

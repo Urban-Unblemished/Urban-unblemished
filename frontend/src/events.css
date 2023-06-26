@@ -1,0 +1,42 @@
+#title{
+    font-family: 'Caprasimo', cursive;
+    font-weight:light;
+    font-size: 20px;
+}
+
+#card-img{
+    max-width: 100%;
+    max-height:100% ;
+    display: flex;
+    justify-content: center;
+    align-items:center; 
+}
+
+
+#card{
+    min-width:483px;
+    border: 3px solid black;
+    box-shadow: 10px 10px;
+}
+
+#card-title{
+    font-family: 'Caprasimo', cursive;
+}
+
+#row{
+    margin-right : 0 !important;
+    margin-left : 0 !important;
+    /* min-width: 485px; */
+}
+
+#col{
+    padding-right : 0 !important;
+    padding-left : 0 !important;
+    display: block;
+    min-width: 260x;
+
+}
+
+#footer{
+    /* min-width: 485px; */
+}
