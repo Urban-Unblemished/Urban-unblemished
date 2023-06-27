@@ -4,9 +4,6 @@ import { Card, CardBody, CardText } from "reactstrap";
 import image from '../../assets/BACKGROUND_IMG.png';
 import '../index.css'
 
-
-
-
 export default function HomePage() {
   return <>
           <div id='main-text-box' style={{backgroundImage: `url(${image})`}}>
