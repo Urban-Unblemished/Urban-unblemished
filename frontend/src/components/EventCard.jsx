@@ -23,6 +23,7 @@ export default function EventCard(){
               borderRadius:'5px',
               width:'fit-content',
               backgroundColor:'black',
+              fontSize:'30px',
             }}>Fri Jun 30</CardTitle>
           </CardImgOverlay>
         </Col>
@@ -30,8 +31,8 @@ export default function EventCard(){
           backgroundColor: '#6A7152'
         }}>
           <CardBody>
-            <CardTitle id='title'>Lets Link</CardTitle>
-            <CardTitle id='title'>Canarsie, Brooklyn</CardTitle>
+            <CardTitle id='title'>Lets Clean!</CardTitle>
+            <CardTitle id='title'>Brownsville, Brooklyn</CardTitle>
             <Button color='info' size='lg' outline>Join</Button>
           </CardBody>
         </Col>
