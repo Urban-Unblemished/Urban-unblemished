@@ -8,6 +8,7 @@ import { Button } from "reactstrap";
 
 export default function EventPage() {
 return <>
+<EventForm />
   <div
   style={{
     backgroundColor:'#6A715',

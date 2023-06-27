@@ -3,6 +3,7 @@ import { useContext, useState} from "react";
 import CurrentUserContext from "../contexts/current-user-context";
 import { Button } from "reactstrap";
 
+
 export default function SiteHeadingAndNav() {
   const { currentUser } = useContext(CurrentUserContext);
   const [color, changeColor] = useState('#69FFF1');
@@ -30,3 +31,6 @@ export default function SiteHeadingAndNav() {
     </nav>
   </header>;
 }
+
+
+

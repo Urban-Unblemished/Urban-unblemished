@@ -4,7 +4,7 @@ import '../events.css'
 
 
 export default function EventCard(){
-  return <>
+    return <>
   <Container id='container'fluid>
 
     <Card id='card'>
