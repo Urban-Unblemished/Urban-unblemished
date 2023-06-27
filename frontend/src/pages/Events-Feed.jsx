@@ -18,7 +18,7 @@ return <>
     <h1 id="events-header">Events</h1>
     {/* <Button>Create an Event</Button> */}
     {/* <EventForm /> */}
-    <SignUpForm />
+    {/* <SignUpForm /> */}
     <div className="row row-cols-1 row-cols-md-3 g-4">
       <div className="col">
         <EventCard />
