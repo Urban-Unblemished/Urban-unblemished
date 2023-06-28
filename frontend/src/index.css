@@ -13,14 +13,16 @@ input {
 
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between ;
   align-items: center;
   padding: 0.5rem 1rem;
-  background: #000;
+  background: #233329;
+  height: 6rem;
 }
 
+
 #logo {
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-weight: bold;
   text-decoration: none;
   color: #FFF;
@@ -37,6 +39,14 @@ nav ul {
 nav a {
   display: block;
   color: #FFF;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+
+}
+
+img {
+  height: 160px;
+  width: 280px;
 }
 
 form {
@@ -48,7 +58,112 @@ form {
 
 /* automatically added by NavLink component */
 .active {
-  color: #EEBC32;
+  color: #69FFF1;
   font-weight: bold;
   font-style: italic;
+}
+
+#main-text-box{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  margin-left: 100px;
+  margin-right: 100px;
+  justify-content: center;
+}
+
+ #home-header {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+
+#issue, #impacts, #solution{
+  display:block;
+  margin: auto;
+}
+#card {
+  max-width: 775px; 
+  height:auto;
+}
+
+#about-area{
+  font-family: 'Montserrat', sans-serif;
+}
+
+#about-area-div {
+    display: flex;
+    margin-top: 10rem;
+    justify-content: center;
+}
+
+#about-img{
+  height:550px;
+  width:550px;
+}
+
+#about-text-div{
+  width:700px;
+}
+
+#about-text{
+  font-size: 1.6em;
+}
+
+#be {
+  font-size: 4em;
+  margin: 0;
+}
+
+#about-header{
+  margin-top:5rem;
+  font-weight:700;
+  font-size: 5rem;
+}
+
+#graphics-header{
+  width:900px;
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+}
+
+#graphics-div{
+  display: flex;
+  justify-content: space-around;
+}
+#wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+#how-to-header{
+  font-family:'Montserrat', sans-serif ;
+  text-align:center ;
+}
+#graphic{
+  width:600px;
+  height:600px;
+}
+
+#events-header{
+  font-size: 5rem;
+  text-align: center;
+}
+
+#events-form-header{
+  text-align: center;
+}
+
+Form {
+  width: 500px;
+  background-color: #63D471;
+  border-radius: 8%;
+}
+
+Label{
+  font-family: 'Frank Ruhl Libre', serif;
+font-family: 'Montserrat', sans-serif;
 }

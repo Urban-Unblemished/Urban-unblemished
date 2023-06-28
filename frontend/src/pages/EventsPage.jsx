@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { createEvent,getAllEvents } from "../adapters/events-adapter";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import EventCard from '../components/EventCard';
+import '../events.css'
+import { Button } from "reactstrap";
 
 function EventsPage() {
   const [events, setEvents] = useState([]); // State to hold the list of events
@@ -11,10 +15,7 @@ function EventsPage() {
   const [eventHeader, setEventHeader] = useState("");
   const [location, setLocation] = useState("");
 
-
-
     useEffect(() => {
-        
         const doFetch = async () => {
             const result = await getAllEvents()
             console.log(result)
@@ -119,6 +120,7 @@ function EventsPage() {
         <ul>
           {events.map((event, index) => (
             <li key={index}>
+              <EventCard />
               <h3>{event.header}</h3>
               <p>{event.description}</p>
               <p>Date: {event.date}</p>

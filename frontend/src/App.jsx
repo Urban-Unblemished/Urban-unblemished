@@ -1,6 +1,7 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
+import HomePage from './pages/Home';
+import EventPage from './pages/Events-Feed';
 import SignUpPage from './pages/SignUp';
 import LoginPage from './pages/Login';
 import SiteHeadingAndNav from './components/SiteHeadingAndNav';
@@ -9,7 +10,7 @@ import UserContext from './contexts/current-user-context';
 import { checkForLoggedInUser } from './adapters/auth-adapter';
 import UsersPage from './pages/Users';
 import UserPage from './pages/User';
-import EventsPage from './pages/EventsPage'; 
+
 
 export default function App() {
   const { setCurrentUser } = useContext(UserContext);
@@ -17,20 +18,20 @@ export default function App() {
     checkForLoggedInUser().then(setCurrentUser);
   }, [setCurrentUser]);
 
-  return (
-    <>
-      <SiteHeadingAndNav />
-      <main>
+  return <>
+    <SiteHeadingAndNav />
+    <main >
+      <div>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<HomePage />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/sign-up' element={<SignUpPage />} />
           <Route path='/users' element={<UsersPage />} />
           <Route path='/users/:id' element={<UserPage />} />
-          <Route path='/events' element={<EventsPage />} /> 
           <Route path='*' element={<NotFoundPage />} />
+          <Route path='/events' element={<EventPage />} />
         </Routes>
-      </main>
-    </>
-  );
+      </div>
+    </main>
+  </>;
 }
