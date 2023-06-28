@@ -1,5 +1,31 @@
 import React, { useEffect, useState } from "react";
-import { createEvent,getAllEvents } from "../adapters/events-adapter";
+import { createEvent, getAllEvents } from "../adapters/events-adapter";
+import { Card, CardHeader, CardBody, CardTitle, CardText, Button } from "reactstrap";
+
+const EventCard = ({ event }) => {
+    const { header, description, date, time, location, img_url } = event;
+
+    return (
+      <Card variant="outlined">
+        <CardHeader>
+          <CardTitle>{header}</CardTitle>
+        </CardHeader>
+        <CardBody>
+          <CardText>{description}</CardText>
+          <p>
+            <b>Date:</b> {date}
+            <br />
+            <b>Time:</b> {time}
+            <br />
+            <b>Location:</b> {location}
+          </p>
+        </CardBody>
+        <Button color="primary">Join This Clean Up</Button>
+        <img src={img_url} alt="Event" />
+        
+      </Card>
+    );
+  };
 
 function EventsPage() {
   const [events, setEvents] = useState([]); // State to hold the list of events
@@ -17,7 +43,7 @@ function EventsPage() {
         
         const doFetch = async () => {
             const result = await getAllEvents()
-            console.log(result)
+            // console.log(result)
             setEvents(result)
         }
         doFetch()
@@ -49,6 +75,7 @@ function EventsPage() {
     setEventHeader("");
     setLocation("");
     setShowForm(false);
+    
   };
 
   const toggleFormVisibility = () => {
@@ -117,7 +144,12 @@ function EventsPage() {
         <p>No events available.</p>
       ) : (
         <ul>
-          {events.map((event, index) => (
+            {events.map((event, index) => (
+  <li key={index}>
+    <EventCard event={event} />
+  </li>
+))}
+          {/* {events.map((event, index) => (
             <li key={index}>
               <h3>{event.header}</h3>
               <p>{event.description}</p>
@@ -126,7 +158,7 @@ function EventsPage() {
               <p>Location: {event.location}</p>
               <img src={event.img_url} alt="Event" />
             </li>
-          ))}
+          ))} */}
         </ul>
       )}
     </div>

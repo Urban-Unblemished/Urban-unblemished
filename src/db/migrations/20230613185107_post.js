@@ -5,10 +5,11 @@
 exports.up = (knex) => knex.schema.createTable ('post', (table) => {
     table.increments('post_id').primary();
     table.integer('user_id').references('id').inTable('users')
-    table.string('img_url')
-    table.string('header')
+    table.text('img_url')
+    table.text('header')
     table.text('description')
     table.string('location')
+    table.specificType('comments', 'text[]')
     table.timestamps(true, true);
 
 });

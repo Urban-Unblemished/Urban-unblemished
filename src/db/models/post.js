@@ -1,13 +1,14 @@
 const knex = require('../knex');
 
 class Post {
-    constructor({post_id, user_id, img_url, description, header, location }){
+    constructor({post_id, user_id, img_url, description, header, location, comments}){
         this.post_id = post_id
         this.user_id = user_id
         this.img_url = img_url
         this.description = description
         this.header = header
         this.location = location
+        this.comments = comments
 
     }
 
@@ -23,9 +24,32 @@ class Post {
         }
       }
 
-    static async delete (post_id)  {
+
+      static async createComment ( post_id, user_id, comments) {
         try {
-          const query = `DELETE FROM posts WHERE post_id = ? RETURNING *`;
+          const second = `SELECT username FROM users WHERE id = ${user_id}`
+          console.log(second);
+          const { rows: [users] }  = await knex.raw(second);
+          
+          console.log(users)
+          const query = `UPDATE post SET comments = comments || '{new test}' WHERE post_id = ${post_id}`;
+          
+          const { rows: [post]} = await knex.raw(query);
+          
+          console.log(post, query)
+
+          return post ? new Post(post) : null;
+      
+        } catch (err) {
+          console.error(err);
+          return null;
+        }
+      }
+
+
+    static async delete(post_id)  {
+        try {
+          const query = `DELETE FROM post WHERE post_id = ? RETURNING *`;
           const { rows: [post] } = await knex.raw(query, [post_id]);
           return post;
         } catch (err) {
@@ -57,6 +81,12 @@ class Post {
         }
 
         }
+
+
+
+
+        
+    
 
 
 

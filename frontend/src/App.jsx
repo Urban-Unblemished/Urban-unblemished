@@ -10,6 +10,8 @@ import { checkForLoggedInUser } from './adapters/auth-adapter';
 import UsersPage from './pages/Users';
 import UserPage from './pages/User';
 import EventsPage from './pages/EventsPage'; 
+import FeedPage from './pages/FeedPage'; 
+
 
 export default function App() {
   const { setCurrentUser } = useContext(UserContext);
@@ -28,6 +30,7 @@ export default function App() {
           <Route path='/users' element={<UsersPage />} />
           <Route path='/users/:id' element={<UserPage />} />
           <Route path='/events' element={<EventsPage />} /> 
+          <Route path='/feed' element={<FeedPage />} /> 
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
       </main>
