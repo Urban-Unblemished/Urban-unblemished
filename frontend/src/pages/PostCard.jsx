@@ -69,16 +69,16 @@ const PostCard = ({ post }) => {
       </div>
       <div
         style={{
-          width: "300px",
-          border: "1px solid #ccc",
-          padding: "10px",
-          marginBottom: "10px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          // width: "300px",
+          // border: "1px solid #ccc",
+          // padding: "10px",
+          // marginBottom: "10px",
+          // display: "flex",
+          // flexDirection: "column",
+          // alignItems: "center",
         }}
       >
-        {comments ? <div>{comments}</div> : <></>}
+        {/* {comments ? <div>{comments}</div> : <></>} */}
       </div>
     </div>
   );
