@@ -94,8 +94,10 @@ export default function LoginPage() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log("clicked")
     setErrorText('');
     const formData = new FormData(event.target);
+    console.log(formData)
     const [user, error] = await logUserIn(Object.fromEntries(formData.entries()));
     if (error) return setErrorText(error.statusText);
     setCurrentUser(user);
@@ -105,16 +107,55 @@ export default function LoginPage() {
   if (currentUser) return <Navigate to="/" />;
 
   return <>
-    <h1>Login!</h1>
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="username">Username</label>
-      <input type="text" autoComplete="username" id="username" name="username" />
+    <div id="login-form" style={{
+      display:'flex',
+      justifyContent:"center",
 
-      <label htmlFor="password">Password</label>
-      <input type="password" autoComplete="current-password" id="password" name="password" />
-
-      <button>Log in!</button>
-    </form>
+    }}>
+    <Card style={{
+      width:'350px',
+      display:'flex',
+      justifyContent:'center',
+      alignItems:'center',
+      backgroundColor:"black",
+      color:"white"
+    }}>
+    <h1>Log In</h1>
+    <Form id="create-form" onSubmit={ handleSubmit }>
+      <Row id="login-row">
+        <Col md={9}>
+          <FormGroup>
+          <Label for="username">Username</Label>
+            <Input
+              id="username"
+              name="username"
+              type="text"
+              autoComplete="username"
+              bsSize="md"
+              placeholder="Username"
+              style={{
+              }}
+            />
+          </FormGroup>
+          <FormGroup>
+          <Label for="password">Password</Label>
+            <Input
+              id='password'
+              name="password"
+              type="password"
+              autoComplete="current-password"
+              bsSize="md"
+              placeholder="Password"
+            />
+          </FormGroup>
+        </Col>
+      </Row>
+      <Button size="lg" color="success">
+        Log In
+      </Button>
+    </Form>
+    </Card>
+    </div>
     { !!errorText && <p>{errorText}</p> }
   </>;
 }

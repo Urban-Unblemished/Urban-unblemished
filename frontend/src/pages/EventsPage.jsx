@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createEvent,getAllEvents } from "../adapters/events-adapter";
-import {Card,Button, CardBody, CardFooter,CardImg, CardImgOverlay, CardTitle, CardText,Form, FormGroup,Label, Input, Row, Container } from 'reactstrap';
-// import styles from '../events.css';
+import {Card, Button, CardBody, CardFooter,CardImg, Col,  CardTitle, CardText,Form, FormGroup,Label, Input, Row} from 'reactstrap';
+import styles from '../events.css';
 
 
 function EventsPage() {
@@ -65,9 +65,10 @@ const handleDeleteEvent = (eventId) => {
     .catch((error) => {
       console.error("Event deletion error:", error);
     });
-};
-////////////////RSVP/////////////////////
-const handleRSVPClick = (event_id) => {
+  };
+  ////////////////RSVP/////////////////////
+  const handleRSVPClick = (event_id) => {
+  console.log("clicked")
       const requestBody = {
         event_id: event_id,
       };
@@ -79,8 +80,8 @@ const handleRSVPClick = (event_id) => {
         },
         body: JSON.stringify(requestBody),
       })
-        .then((response) => {
-          if (response.ok) {
+      .then((response) => {
+        if (response.ok) {
             console.log("RSVP success");
           } else {
             console.error("RSVP failed");
@@ -140,16 +141,29 @@ const handleRSVPClick = (event_id) => {
   };
 
   return (
-    <div>
+    <div style={{
+      verticalAlign:'middle',
+      padding:'100px'
+    }}>
       <h1 id="events-header">Events</h1>
-      <button id='make-event-btn' onClick={toggleFormVisibility}>Make Event</button>
+      <button id='make-event-btn' onClick={toggleFormVisibility} style={{margin:'40px'}}>Make Event</button>
       {showForm && (
-        <div id="event-form">
-          <Card>
-            <Form onSubmit={handleFormSubmit}>
-              <h1 id="events-form-header">Make an Event</h1>
-              <FormGroup>
-                <Label >Heading</Label>
+        <div id="event-form-div" style={{
+          display:'flex',
+          justifyContent:'center',
+          padding:'40px'
+
+        }}>
+          <Card id="event-form-card">
+            <Form onSubmit={handleFormSubmit} style={{
+                padding:'40px'
+              }}>
+              <h1 id="events-form-header" style={{
+                display:'flex',
+                justifyContent:'center',
+                alignSelf:'center'
+              }}>Make an Event</h1>
+              <FormGroup >
                 <Input
                 type="text"
                 bsSize="lg"
@@ -162,56 +176,58 @@ const handleRSVPClick = (event_id) => {
                 />
               </FormGroup>
               <FormGroup>
-                  <Label for="exampleFile">
-                  Upload a Pic
-                  </Label>
                   <Input
-                  id="exampleFile"
-                  name="file"
+                  id="image_url"
+                  name="image"
                   type="text"
+                  placeholder="Image URL"
                   value={ imgUrl }
                   onChange={(e) => setImgUrl(e.target.value)}
                   /> 
               </FormGroup>
               <FormGroup>
-                  <Label for="exampleText">
-                  Description
-                  </Label>
                   <Input
-                  id="exampleText"
+                  id="eventDescription"
                   name="text"
                   type="textarea"
+                  placeholder="Description"
                   value={ eventDescription }
                   onChange={(e) => setEventDescription(e.target.value)}
                   />
               </FormGroup>
-              <FormGroup>
-                  <Label for="exampleDate">
-                  Date
-                  </Label>
-                  <Input
-                  id="exampleDate"
-                  name="date"
-                  placeholder="date placeholder"
-                  type="date"
-                  value={ eventDate }
-                  onChange={(e) => setEventDate(e.target.value)}
-                  />
-              </FormGroup>
-              <FormGroup>
-                  <Label for="exampleTime">
-                  Time
-                  </Label>
-                  <Input
-                  id="exampleTime"
-                  name="time"
-                  placeholder="time placeholder"
-                  type="time"
-                  value={ eventTime }
-                  onChange={(e) => setEventTime(e.target.value)}
-                  />
-              </FormGroup>
-              <FormGroup>
+                <Row>
+                <Col>
+                  <FormGroup>
+                    <Label for="exampleDate">
+                    Date
+                    </Label>
+                    <Input
+                    id="exampleDate"
+                    name="date"
+                    placeholder="date placeholder"
+                    type="date"
+                    value={ eventDate }
+                    onChange={(e) => setEventDate(e.target.value)}
+                    />
+                  </FormGroup>
+                </Col>
+                <Col>
+                  <FormGroup>
+                    <Label for="exampleTime">
+                    Time
+                    </Label>
+                    <Input
+                    id="exampleTime"
+                    name="time"
+                    placeholder="time placeholder"
+                    type="time"
+                    value={ eventTime }
+                    onChange={(e) => setEventTime(e.target.value)}
+                    />
+                  </FormGroup>
+                </Col>
+              </Row>
+            <FormGroup>
                 <Label for="exampleAddress">
                   Location
                 </Label>
@@ -234,13 +250,25 @@ const handleRSVPClick = (event_id) => {
       {events.length === 0 ? (
         <p>No events available.</p>
       ) : (
-        <div className="row row-cols-1 row-cols-md-3 g-4">
-        <div className="col"></div>
+        <div style={{
+          display:'flex',
+          justifyContent:'center',
+          alignItems:'center'
+        }}>
+
+          <Row xs="3">
           {events.map((event, index) => (
             <div key={index}>
-              <Container>
-                <Card id='card' key={event.event_id}>
-                    <CardImg id='card-img' src={ event.img_url } />
+              <Col>
+                <Card id='card' key={event.event_id}
+                style={{
+                  maxWidth:'320px'
+                }}
+                >
+                    <CardImg id='card-img' src={ event.img_url } style={{
+                      height:'200px',
+                      maxWidth:'320px'
+                    }}/>
                     <CardBody>
                       <CardTitle id="card-title">{ event.header}</CardTitle>
                       <CardText>{event.description}</CardText>
@@ -248,12 +276,16 @@ const handleRSVPClick = (event_id) => {
                       <CardTitle>{event.time}</CardTitle>
                       <CardText>{event.location}</CardText>
                     </CardBody>
-                        <Button color="info" size="lg">RSVP</Button>
+                        <Button  size="lg" style={{
+                          backgroundColor:'#63A46C',
+                          color:'black'
+                        }} onClick={ handleRSVPClick(event.event_id) }>RSVP</Button>
                   <CardFooter id='footer'>16+ People are Going!</CardFooter>
                 </Card>
-              </Container>
+              </Col>
             </div>
           ))}
+          </Row>
       </div>
       )}
     </div>
