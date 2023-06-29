@@ -18,7 +18,7 @@ export default function HomePage() {
                 <p id='about-text'>
                   Clean or dirty, countless people share it all on Urban Unblemished. Discuss areas of NYC that need help or even join in on a fun event -- sign up to be apart of the change.
                 </p>
-                <Button size="lg" color="success"><NavLink to='/sign-up' style={{
+                <Button size="lg" color="success"><NavLink to='/sign-up'  style={{
                   textDecoration:'none',
                   color:'black'
                 }}>Sign Up</NavLink></Button>
