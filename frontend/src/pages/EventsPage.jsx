@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createEvent,getAllEvents } from "../adapters/events-adapter";
 import {Card,Button, CardBody, CardFooter,CardImg, CardImgOverlay, CardTitle, CardText,Form, FormGroup,Label, Input, Row, Container } from 'reactstrap';
-// import styles from '../events.css';
 
 
 function EventsPage() {
@@ -218,7 +217,7 @@ const handleRSVPClick = (event_id) => {
                 <Input
                   id="exampleAddress"
                   name="address"
-                  placeholder="1234 Main St"
+                  placeholder="ex.1234 Main St"
                   type="text"
                   value={ location }
                   onChange={(e) => setLocation(e.target.value)}
@@ -249,7 +248,7 @@ const handleRSVPClick = (event_id) => {
                       <CardText>{event.location}</CardText>
                     </CardBody>
                         <Button color="info" size="lg">RSVP</Button>
-                  <CardFooter id='footer'>16+ People are Going!</CardFooter>
+                  {/* <CardFooter id='footer'>16+ People are Going!</CardFooter> */}
                 </Card>
               </Container>
             </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../events.css'
+// import '../events.css'
 import { Row, Col, Card, FormGroup, Label, Input, Form, Button } from "reactstrap";
 
 export default function SignUpForm(){
