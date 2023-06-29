@@ -127,6 +127,23 @@ function FeedPage() {
     fetchData();
   }, []);
 
+  /////GET POST///////
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch("/api/post");
+      const jsonData = await response.json();
+      setPosts(jsonData);
+    } catch (error) {
+      console.log("Error fetching posts:", error);
+    }
+  };
+
+
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
@@ -204,6 +221,28 @@ function FeedPage() {
         </div>
       )}
 
+      {/* <div className="container">
+      {posts.map((posts, index) => (
+        <div className="card" key={index}>
+          <div className="card-header">
+            <img className="card-image" src={posts.img_url} alt="" />
+          </div>
+          <div className="card-body">
+            <span className="tag tag-teal">Clean</span>
+            <h4>Why is the Tesla Cybertruck designed the way it is?</h4>
+            <p>{posts.description}</p>
+            <div className="user">
+              <img src={posts.header} alt="" />
+              <div className="user-info">
+                <h5>{user.username}</h5>
+                <small>{post.date}</small>
+                <small>{posts.location}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+       ))} 
+    </div> */}
       {posts.length === 0 ? (
         <p>No posts available.</p>
       ) : (
