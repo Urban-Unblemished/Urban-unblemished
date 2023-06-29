@@ -109,7 +109,9 @@
 
 import React, { useEffect, useState } from "react";
 import { createPost, getPosts } from "../adapters/post-adapter";
-import PostCard from "./PostCard"; 
+import '../postCard.css';
+
+// import PostCard from "./PostCard"; 
 
 function FeedPage() {
   const [posts, setPosts] = useState([]);
@@ -221,29 +223,29 @@ function FeedPage() {
         </div>
       )}
 
-      {/* <div className="container">
+      <div className="container">
       {posts.map((posts, index) => (
-        <div className="card" key={index}>
+        <div className="post-card" key={index}>
           <div className="card-header">
-            <img className="card-image" src={posts.img_url} alt="" />
+            <img className="post-card-image" src={posts.img_url} alt="" />
           </div>
           <div className="card-body">
-            <span className="tag tag-teal">Clean</span>
-            <h4>Why is the Tesla Cybertruck designed the way it is?</h4>
+            <span className="tag tag-teal">{posts.header}</span>
             <p>{posts.description}</p>
+            <small>{posts.location}</small>
             <div className="user">
-              <img src={posts.header} alt="" />
+              {/* <img src={posts.img_ur} alt="" /> */}
               <div className="user-info">
-                <h5>{user.username}</h5>
-                <small>{post.date}</small>
-                <small>{posts.location}</small>
+                {/* <h5>{user.username}</h5> */}
+                {/* <small>{posts.created_at}</small> */}
+                
               </div>
             </div>
           </div>
         </div>
        ))} 
-    </div> */}
-      {posts.length === 0 ? (
+    </div>
+      {/* {posts.length === 0 ? (
         <p>No posts available.</p>
       ) : (
         <ul>
@@ -253,7 +255,7 @@ function FeedPage() {
             </ul>
           ))}
         </ul>
-      )}
+      )} */}
     </div>
   );
 }

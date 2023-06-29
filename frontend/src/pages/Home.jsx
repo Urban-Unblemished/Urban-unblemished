@@ -1,5 +1,5 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, CardBody, CardText, Button} from "reactstrap";
 import image from '../../assets/BACKGROUND_IMG.png';
 import { NavLink } from "react-router-dom";
