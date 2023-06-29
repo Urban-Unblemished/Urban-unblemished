@@ -10,6 +10,7 @@ import { checkForLoggedInUser } from './adapters/auth-adapter';
 import UsersPage from './pages/Users';
 import UserPage from './pages/User';
 import EventsPage from './pages/EventsPage'; 
+import FeedPage from './pages/FeedPage';
 // import image from '../assets/BACKGROUND_IMG.png';
 
 export default function App() {
@@ -29,6 +30,7 @@ console.log("set" + setCurrentUser )
           <Route path='/users' element={<UsersPage />} />
           <Route path='/users/:id' element={<UserPage />} />
           <Route path='/events' element={<EventsPage />} /> 
+          <Route path='/feed' element={<FeedPage/>} /> 
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
       </main>

@@ -19,6 +19,7 @@ export default function SiteHeadingAndNav() {
     <nav>
       <ul>
         <li><NavLink to='/events'>Events</NavLink></li>
+        <li><NavLink to='/feed'>Feed</NavLink></li>
         <li><NavLink to='/users' end={true}>Users</NavLink></li>
         {
           currentUser
@@ -26,6 +27,7 @@ export default function SiteHeadingAndNav() {
             : <>
               <li><NavLink to='/login'>Login</NavLink></li>
               <li><NavLink to='/sign-up'>Sign Up</NavLink></li>
+              {/* <li><NavLink to='/sign-up'>Hello</NavLink></li> */}
             </>
         }
       </ul>
