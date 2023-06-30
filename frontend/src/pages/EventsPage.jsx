@@ -256,7 +256,7 @@ const handleDeleteEvent = (eventId) => {
           alignItems:'center'
         }}>
 
-          <Row xs="5" className="justify-content-center" style={{ gap: '200px', marginTop: '50px' }}>
+          <Row xs="5" className="justify-items-center" style={{ gap: '200px', marginTop: '50px' }}>
           {events.map((event, index) => (
             <div key={index}>
               <Col>
