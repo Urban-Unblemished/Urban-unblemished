@@ -7,7 +7,7 @@ import '../index.css';
 
 export default function HomePage() {
   return <>
-          <div id='main-text-box' >
+          {/* <div id='main-text-box' > */}
             <div id='about-area-div' style={{
               backgroundImage: `url(${image})`,
               margin:'0'
@@ -68,7 +68,7 @@ export default function HomePage() {
                   </CardText>
                 </CardBody>
               </Card>
-            </div>
+            {/* </div> */}
             <div id="solution">
               <h1 id='home-header'> The Solution</h1>
               <Card id="home-card">
@@ -82,7 +82,7 @@ export default function HomePage() {
               </Card>
             </div>
       </div>
-      <div id="uu-how-to">
+      {/* <div id="uu-how-to">
         <div id='wrapper'>
           <div id="graphics-header">
             <h1 id='how-to-header'> 
@@ -110,6 +110,6 @@ export default function HomePage() {
             <p>Band together, form events and clean organized.<br /> Form clean up groups and promote and discuss events.</p>
           </div>
         </div>
-      </div>
+      </div> */}
   </>
 }

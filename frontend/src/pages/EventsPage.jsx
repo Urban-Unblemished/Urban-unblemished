@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createEvent,getAllEvents } from "../adapters/events-adapter";
 import {Card, Button, CardBody, CardFooter,CardImg, Col,  CardTitle, CardText,Form, FormGroup,Label, Input, Row} from 'reactstrap';
-import styles from '../events.css';
+// import styles from '../events.css';
 
 
 function EventsPage() {
@@ -256,18 +256,19 @@ const handleDeleteEvent = (eventId) => {
           alignItems:'center'
         }}>
 
-          <Row xs="3">
+          <Row xs="5" className="justify-content-center" style={{ gap: '200px', marginTop: '50px' }}>
           {events.map((event, index) => (
             <div key={index}>
               <Col>
                 <Card id='card' key={event.event_id}
                 style={{
-                  maxWidth:'320px'
+                  width:'300px',
+
                 }}
                 >
                     <CardImg id='card-img' src={ event.img_url } style={{
                       height:'200px',
-                      maxWidth:'320px'
+                      maxWidth:'5200px'
                     }}/>
                     <CardBody>
                       <CardTitle id="card-title">{ event.header}</CardTitle>
@@ -280,7 +281,7 @@ const handleDeleteEvent = (eventId) => {
                           backgroundColor:'#63A46C',
                           color:'black'
                         }} onClick={ handleRSVPClick(event.event_id) }>RSVP</Button>
-                  <CardFooter id='footer'>16+ People are Going!</CardFooter>
+                  {/* <CardFooter id='footer'>16+ People are Going!</CardFooter> */}
                 </Card>
               </Col>
             </div>

@@ -32,9 +32,11 @@ nav a {
   
   #main-text-box{
 	display: grid;
+	/* grid-column-gap: 100px; */
 	grid-template-columns: 1fr;
-	grid-template-rows: repeat(4, 1fr);
-	justify-content: center;
+	grid-template-rows: repeat(4, 1fr)
+	
+	/* background-color: #32de84; */
   }
   
    #home-header {
@@ -44,8 +46,17 @@ nav a {
 	justify-content: center;
   }
   #issue, #impacts, #solution{
-	display:block;
+	/* display:block; */
+	display: grid;
+	padding-top: 25px;
+	grid-gap: 10px;
+	
 	margin: auto;
+	/* background-color: #baedd1; */
+	background-color: #32de84;
+	justify-items: center;
+	padding-bottom: 20px;
+
   }
   #home-card {
 	max-width: 575px; 
@@ -65,10 +76,12 @@ nav a {
   #about-img{
 	height:550px;
 	width:550px;
+	
   }
   
   #about-text-div{
 	width:700px;
+	/* background-color: transparent !important; */
   }
   
   #about-text{
@@ -84,6 +97,7 @@ nav a {
 	margin-top:5rem;
 	font-weight:700;
 	font-size: 5rem;
+	/* background-color: #32de84; */
   }
   
   #graphics-header{

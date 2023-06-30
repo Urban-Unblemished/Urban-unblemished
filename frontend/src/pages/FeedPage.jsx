@@ -229,7 +229,7 @@ function FeedPage() {
           <div className="card-header">
             <img className="post-card-image" src={posts.img_url} alt="" />
           </div>
-          <div className="card-body">
+          <div className="card-body123">
             <span className="tag tag-teal">{posts.header}</span>
             <p>{posts.description}</p>
             <small>{posts.location}</small>
