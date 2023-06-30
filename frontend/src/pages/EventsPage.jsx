@@ -72,7 +72,7 @@ const handleDeleteEvent = (eventId) => {
       const requestBody = {
         event_id: event_id,
       };
-      console.log("volun")
+      console.log("volunteer")
       fetch("/api/volunteer", {
         method: "POST",
         headers: {

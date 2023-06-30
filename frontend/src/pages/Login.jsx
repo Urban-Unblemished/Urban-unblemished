@@ -1,9 +1,9 @@
-// import { React, useContext, useState } from "react";
-// import { useNavigate, Navigate } from "react-router-dom";
-// import { logUserIn } from "../adapters/auth-adapter";
-// import CurrentUserContext from "../contexts/current-user-context";
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Row, Col, Card, FormGroup, Label, Input, Form, Button } from "reactstrap";
+import { React, useContext, useState } from "react";
+import { useNavigate, Navigate } from "react-router-dom";
+import { logUserIn } from "../adapters/auth-adapter";
+import CurrentUserContext from "../contexts/current-user-context";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Row, Col, Card, FormGroup, Label, Input, Form, Button } from "reactstrap";
 
 
 // export default function LoginPage() {
@@ -82,10 +82,6 @@
 
 
 
-import { useContext, useState } from "react";
-import { useNavigate, Navigate } from "react-router-dom";
-import { logUserIn } from "../adapters/auth-adapter";
-import CurrentUserContext from "../contexts/current-user-context";
 
 export default function LoginPage() {
   const navigate = useNavigate();
