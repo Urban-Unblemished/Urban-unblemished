@@ -121,6 +121,45 @@ function FeedPage() {
   const [postHeader, setPostHeader] = useState("");
   const [location, setLocation] = useState("");
 
+
+//////DELETE POST ///////
+
+const deletePost = (postId) => {
+  const requestBody = {
+    post_id: postId,
+  };
+  console.log("delete")
+  fetch("http://localhost:3000/api/post/${postId}", {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(requestBody),
+  })
+    .then((response) => {
+      if (response.ok) {
+        console.log("Post deletion successful");
+        setPosts(post.filter((posts) => posts.post_id !== postId))
+        console.log("this is Post"+eventId)
+      } else {
+        console.error("Post deletion failed");
+      }
+    })
+    .catch((error) => {
+      console.error("Post deletion error:", error);
+    });
+  };
+
+
+
+
+
+////////////////////////
+
+
+
+
+
   useEffect(() => {
     const fetchData = async () => {
       const result = await getPosts();
@@ -171,11 +210,12 @@ function FeedPage() {
   };
 
   return (
-    <div>
+    <div id = 'divBody'>
+    <div id = 'formCard'>
       <h1>Feed Page</h1>
       <button onClick={toggleFormVisibility}>Create Post</button>
       {showForm && (
-        <div className="card">
+        <div className="card1234">
           <form onSubmit={handleFormSubmit}>
             <div className="form-group">
               <label>
@@ -189,8 +229,8 @@ function FeedPage() {
             </div>
             <div className="form-group">
               <label>
-                Post Description:
-                <textarea
+                Description:
+                <input
                   value={postDescription}
                   onChange={(e) => setPostDescription(e.target.value)}
                 />
@@ -206,7 +246,7 @@ function FeedPage() {
                 />
               </label>
             </div>
-            <div className="form-group">
+            {/* <div className="form-group">
               <label>
                 Location:
                 <input
@@ -215,7 +255,7 @@ function FeedPage() {
                   onChange={(e) => setLocation(e.target.value)}
                 />
               </label>
-            </div>
+            </div> */}
             <div className="form-group">
               <button type="submit">Submit</button>
             </div>
@@ -224,16 +264,17 @@ function FeedPage() {
       )}
 
       <div className="container">
-      {posts.map((posts, index) => (
+      {posts.map((post, index) => (
         <div className="post-card" key={index}>
           <div className="card-header">
-            <img className="post-card-image" src={posts.img_url} alt="" />
+            <img className="post-card-image" src={post.img_url} alt="" />
           </div>
           <div className="card-body123">
-            <span className="tag tag-teal">{posts.header}</span>
-            <p>{posts.description}</p>
-            <small>{posts.location}</small>
+           <span className="tag tag-teal">{post.header}</span>
+            <h5>{post.description}</h5>
+            {/* <h4>{posts.location}</h4> */}
             <div className="user">
+              
               {/* <img src={posts.img_ur} alt="" /> */}
               <div className="user-info">
                 {/* <h5>{user.username}</h5> */}
@@ -241,6 +282,9 @@ function FeedPage() {
                 
               </div>
             </div>
+            <div id = 'deleteButton'>
+            <button id="button" onClick={() => deletePost(post.post_id)}>Delete</button>
+              </div>
           </div>
         </div>
        ))} 
@@ -256,6 +300,7 @@ function FeedPage() {
           ))}
         </ul>
       )} */}
+    </div>
     </div>
   );
 }
