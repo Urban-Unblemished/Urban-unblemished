@@ -5,6 +5,10 @@ const routes = require('./routes');
 const logRoutes = require('./middleware/log-routes');
 
 const app = express();
+const cors = require('cors');
+app.use(cors(
+  
+));
 
 app.use(handleCookieSessions);
 app.use(logRoutes);
@@ -17,5 +21,7 @@ app.get('*', (req, res, next) => {
   if (req.originalUrl.startsWith('/api')) next();
   res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
+
+
 
 module.exports = app;

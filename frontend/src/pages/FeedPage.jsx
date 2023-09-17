@@ -139,7 +139,7 @@ const deletePost = (postId) => {
     .then((response) => {
       if (response.ok) {
         console.log("Post deletion successful");
-        setPosts(post.filter((posts) => posts.post_id !== postId))
+        setPosts(posts.filter((posts) => posts.post_id !== postId))
         console.log("this is Post"+eventId)
       } else {
         console.error("Post deletion failed");
